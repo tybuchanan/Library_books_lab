@@ -1,0 +1,32 @@
+
+
+<h1>Add a Library</h1>
+<div ng-controller="LibraryCtrl">
+  <form ng-submit="addLibrary()">
+    <input type="text" ng-model="newLibrary.title" placeholder="Library name"><br>
+  </form>
+  
+  <ul ng-repeat="library in libraries">
+    <p class="library-title">{{library.title}}</p>
+  </ul>
+  <button ng-click="deleteLibrary()">Delete</button>
+
+<h2>Add Book to Library</h2>
+  <section ng-controller="BookCtrl">
+    <form ng-submit="addBook()">
+      <input type="text" ng-model="newBook.title" placeholder="title"></br>
+      <input type="text" ng-model="newBook.author" placeholder="author"></br>
+      <input type="text" ng-model="newBook.ISBN" placeholder="ISBN"></br>
+      <textarea ng-model="newBook.description" placeholder="description"></textarea>
+      <br><button>Add Book</button>
+    </form>
+  
+    <ul ng-repeat="book in books">
+      <h3><li class="book-title">Title: {{library.book.title}}</li></h3>
+      <li class="book.author">Author: {{library.book.author}}</li>
+      <li>Description: {{library.book.description}}</li>
+      <li>ISBN# {{library.book.ISBN}}</li><br>
+      <button ng-click="deleteBook()">Delete</button>
+    </ul>
+  </section>
+</div>

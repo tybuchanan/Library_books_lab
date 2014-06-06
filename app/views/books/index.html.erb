@@ -12,6 +12,7 @@
   <button ng-click="deleteLibrary()">Delete</button>
 
 <h2>Add Book to Library</h2>
+  <!-- BookCtrl is a nested controller -->
   <section ng-controller="BookCtrl">
     <form ng-submit="addBook()">
       <input type="text" ng-model="newBook.title" placeholder="title"></br>
@@ -22,10 +23,10 @@
     </form>
   
     <ul ng-repeat="book in books">
-      <h3><li class="book-title">Title: {{library.book.title}}</li></h3>
-      <li class="book.author">Author: {{library.book.author}}</li>
-      <li>Description: {{library.book.description}}</li>
-      <li>ISBN# {{library.book.ISBN}}</li><br>
+      <strong><li class="book-title">Title: {{book.title}}</li></strong>
+      <li class="book.author">Author: {{book.author}}</li>
+      <li>Description: {{book.description}}</li>
+      <li>ISBN# {{book.ISBN}}</li><br>
       <button ng-click="deleteBook()">Delete</button>
     </ul>
   </section>
